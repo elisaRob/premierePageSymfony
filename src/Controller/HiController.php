@@ -42,19 +42,30 @@ class HiController extends AbstractController
 
     public function index(): Response
     {
+
+        /*Un framework est basée sur des conventions et parmis ces conventions c'est que la méthode render elle va chercher 
+        la vue à partir du dossier template parce qu'il sait que les templates les vues qu'on va générer il va les stocker
+        ici par convention du coup on dit directement hi car elle elle va pointer directement sur ce dossier là,
+        
+        le deuxieme paramètre de la méthode render est un objet*/
+
+        return $this->render('hi/index.html.twig',[
+            'prenom'=>'Elisa',
+            'nom'=>'ROBERT AOUCHER'
+        ]);
         // return $this->render('hi/index.html.twig', [
         //     'controller_name' => 'HiController',
         // ]);
 
-        return new Response(
-            content:"
-            <head>
-                <title>Ma premiere page</title>
-            </head>
-            <body>
-                <h1>Ma premiere page</h1>
-            </body>
-            "
-        );
+        // return new Response(
+        //     content:"
+        //     <head>
+        //         <title>Ma premiere page</title>
+        //     </head>
+        //     <body>
+        //         <h1>Ma premiere page</h1>
+        //     </body>
+        //     "
+        // );
     }
 }
